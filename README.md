@@ -1,6 +1,6 @@
 # MovieRecLite - 基于协同过滤的电影推荐系统
 
-本项目为本人独立完成的毕业设计，使用 Python 的 Django 框架开发，实现了一个简洁的电影推荐系统。系统基于协同过滤算法，结合评分数据、相似度矩阵与电影信息，提供个性化推荐功能，并通过 Django 模板进行前端页面展示。
+本项目为本人的毕业设计，使用 Python 的 Django 框架开发，实现了一个简洁的电影推荐系统。系统基于协同过滤算法，结合评分数据、相似度矩阵与电影信息，提供个性化推荐功能，并通过 Django 模板进行前端页面展示。
 
 ## 项目功能 Features
 
@@ -67,9 +67,24 @@ http://127.0.0.1:8000/
 
 ![图片描述](static/demo/home.png)
 
-分类界面实例：
+分类界面示例：
 
 ![图片描述](static/demo/genres.png)
+
+评分历史界面示例：
+![图片描述](static/demo/history.png)
+
+搜索界面示例：
+![图片描述](static/demo/search.png)
+
+影片界面示例：
+![图片描述](static/demo/detail.png)
+
+推荐界面示例：
+![图片描述](static/demo/recommentation.png)
+
+
+
 
 
 ## 个人说明
