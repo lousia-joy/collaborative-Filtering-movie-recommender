@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="{% static 'movie/favicon1.ico' %}"/>
+    <link rel="bookmark" href="{% static 'movie/favicon1.ico' %}"/>
+    <meta charset="UTF-8">
+    <title>乐影网站</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script><!--引入jQuery-->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="/static/bootstrap/js/jquery.min.js">
+    <link rel="stylesheet" href="/static/bootstrap/js/bootstrap.min.js">
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"><!--引入bootstrap的css样式库-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script><!--引入jQuery-->
+    <!--bootstrap是基于jQuery库的，应该先导入jQuery-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        .containers {
+            background-color: white;
+            padding: 20px; /* Adjust padding as needed */
+            border-radius: 10px; /* Add rounded corners for better aesthetics */
+            margin-top: 20px; /* Adjust margin to separate from the navigation bar */
+            margin-bottom: 20px; /* Adjust margin to create space at the bottom */
+            margin-right: 80px;
+            margin-left: 80px;
+        }
+
+    </style>
+
+</head>
+<body>
+<!-- 导航条 -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'movie:index' %}">乐影网站</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'movie:index' %}">首页</a></li>
+                <li><a href="{% url 'movie:tag' %}">电影分类</a></li>
+                {% if movie_user %}
+                    <li><a href="{% url 'movie:recommend' %}">推荐列表</a></li>
+                    <li><a href="{% url 'movie:history' movie_user.id %}">评分历史</a></li>
+                {% endif %}
+            </ul>
+            <form class="navbar-form navbar-left" method="GET" action="{% url 'movie:search' %}">
+                <div class="form-group">
+                    <input type="search" name="keyword" class="form-control" placeholder="请输入电影信息" required>
+                </div>
+                <button type="submit" class="btn btn-default">搜索电影</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                {% if movie_user %}
+                    <li>
+                        <div class="btn-group" style="margin-top:10px">
+                            <button type="button" class="btn btn-info">{{ movie_user.name }}</button>
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'movie:logout' %}">退出登录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'movie:register' %}">注册</a></li>
+                    <li><a href="{% url 'movie:login' %}">登录</a></li>
+                {% endif %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="containers">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+
+<div class="mastfoot" style="text-align: center;margin-top:50px;margin-bottom: 30px ">
+    <div class="inner">
+        <p>
+            <span>E02014283方希悦-毕业设计</span>&nbsp;&nbsp;
+{#            <a href="/admin">管理员入口</a>#}
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
