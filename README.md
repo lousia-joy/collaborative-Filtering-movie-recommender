@@ -81,7 +81,7 @@ http://127.0.0.1:8000/
 ![图片描述](static/demo/detail.png)
 
 推荐界面示例：
-![图片描述](static/demo/recommentation.png)
+![图片描述](static/demo/recommendation.png)
 
 
 
