@@ -16,8 +16,8 @@
 | 后端   | Python 3, Django           |
 | 数据   | MySQL, CSV 数据集          |
 | 算法   | 基于物品的协同过滤算法     |
-| 前端   | HTML, CSS, Django Templates |
-| 工具   | PyCharm, Git               |
+| 前端   | HTML, CSS, Django   |
+| 工具   | PyCharm,                |
 
 ## 项目结构
 
