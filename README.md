@@ -61,6 +61,17 @@ python manage.py runserver
 http://127.0.0.1:8000/
 ```
 
+## 项目展示
+
+首页界面示例：
+
+![图片描述](static/demo/home.png)
+
+分类界面实例：
+
+![图片描述](static/demo/genres.png)
+
+
 ## 个人说明
 
 本人为计算机专业毕业生，正在系统学习 Web 全栈开发与实际项目部署经验。
